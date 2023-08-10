@@ -10,9 +10,9 @@ class Category extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $table ='catrgories';
+    protected $table ='categories';
     protected $fillrtable = [
-        'name'
+        'name',
         'photo'
     ];
 }

@@ -12,14 +12,14 @@ class Item extends Model
     use SoftDeletes;
     protected $table ='items';
     protected $fillable =[
-        'codeNo',
+        'coderNO',
         'name',
         'image',
         'price',
         'description',
         'discount',
         'inStock',
-        'categoriesID'
+        'categoryID'
 
     ];
 }
