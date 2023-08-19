@@ -18,7 +18,12 @@ class ItemController extends Controller
         
        return view ('items.index' , compact('items','categories'));
     }
+     
 
+    public function itemCategory(string $category_id){
+        $itemCategories = Item::where('categoryID',$category_id)->get();
+        return view('items.item_category',compact('itemCategories'));
+    }
     /**
      * Show the form for creating a new resource.
      */
