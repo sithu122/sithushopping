@@ -24,6 +24,11 @@ class ItemController extends Controller
         $itemCategories = Item::where('categoryID',$category_id)->get();
         return view('items.item_category',compact('itemCategories'));
     }
+
+    public function itemCart(){
+       
+        return view('items.item_carts');
+    }
     /**
      * Show the form for creating a new resource.
      */

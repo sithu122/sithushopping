@@ -23,7 +23,7 @@
 @endsection
 @section('script')
     <script>
-        let itemString = localStorage.getItem('heinShop_items');
+        let itemString = localStorage.getItem('sithushop_items');
         if(itemString){
             let itemArray = JSON.parse(itemString);
             let data = '';

@@ -22,7 +22,8 @@ $(document).ready(function(){
 
         // console.log(items);
 
-        let itemString = localStorage.getItem('heinShop_items');
+        let itemString = localStorage.getItem('sithushop_items');
+        
         let itemArray;
         if(itemString == null) {
             itemArray = [];
@@ -45,12 +46,12 @@ $(document).ready(function(){
         
 
         let itemData = JSON.stringify(itemArray);
-        localStorage.setItem("heinShop_items", itemData);
+        localStorage.setItem("sithushop_items", itemData);
         itemCount();
     })
 
     function itemCount(){
-        let itemString = localStorage.getItem('heinShop_items');
+        let itemString = localStorage.getItem('sithushop_items');
         if(itemString){
             let itemArray = JSON.parse(itemString);
             if(itemArray != 0){
@@ -61,4 +62,8 @@ $(document).ready(function(){
             }
         }
     }
+
+
+
+   
 })

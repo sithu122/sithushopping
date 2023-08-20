@@ -18,11 +18,11 @@
                                     @endif
                         </div>
                         <p class="lead">{{$item->description}}</p>
-                        <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <div class="d-flex product_actions">
+                            <input class="form-control text-center me-3 qty" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0 addToCart" id="" type="button" data-id="{{$item->id}}" data-name="{{$item->name}}" data-image="{{$item->image}}" data-price="{{$item->price}}" data-discount="{{$item->discount}}">
                                 <i class="bi-cart-fill me-1"></i>
-                                Add to cart
+                                  Add to cart
                             </button>
                         </div>
                     </div>

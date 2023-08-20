@@ -15,11 +15,11 @@
             </div>
         </header>
         <!-- Category section -->
-        <!-- <section class="py-5">
+         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     @foreach($categories as $category)
-                        <a class="col mb-5" href="">
+                        <a class="col mb-5" href="{{route('item_category',$category->id)}}">
                             <div class="card text-bg-dark">
                                 <img src="{{$category->photo}}" class="card-img" alt="...">
                                 <div class="card-img-overlay">
@@ -30,7 +30,7 @@
                     @endforeach
                 </div>
             </div>
-        </section> -->
+        </section>
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
@@ -63,10 +63,10 @@
                                 <!-- Product actions-->
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent product_actions">
                                     <div class="text-center row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-5">
                                             <a class="btn btn-outline-dark mt-auto" href="{{route('items.show',$item->id)}}">View </a>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-7">
                                             <input type="hidden" class="qty" value="1">
                                             <button class="btn btn-outline-dark flex-shrink-0 addToCart" id="" type="button" data-id="{{$item->id}}" data-name="{{$item->name}}" data-image="{{$item->image}}" data-price="{{$item->price}}" data-discount="{{$item->discount}}">
                                                 <i class="bi-cart-fill me-1"></i>
