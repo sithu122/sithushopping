@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Models\Item;
-use App\Models\Category;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Item;
 
 class ItemController extends Controller
 {
@@ -12,23 +12,11 @@ class ItemController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $categories =Category::all();
-        $items = Item::all();
-        
-       return view ('items.index' , compact('items','categories'));
-    }
-     
-
-    public function itemCategory(string $category_id){
-        $itemCategories = Item::where('category_id',$category_id)->get();
-        return view('items.item_category',compact('itemCategories'));
+    {    
+        $items =Item::paginate('10');
+        return view('admin.items.index' , compact('items'));
     }
 
-    public function itemCart(){
-       
-        return view('items.item_carts');
-    }
     /**
      * Show the form for creating a new resource.
      */
@@ -50,10 +38,7 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        $item =Item::find($id);
-        $item_categoryID=$item->category_id;
-        $item_categories=Item::where('category_id',$item_categoryID)->orderBy('id','DESC')->limit(4)->get();
-       return view('items.detail' , compact('item','item_categories'));
+        //
     }
 
     /**

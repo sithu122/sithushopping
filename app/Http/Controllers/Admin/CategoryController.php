@@ -1,34 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Models\Item;
-use App\Models\Category;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-class ItemController extends Controller
+use App\Models\Category;
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories =Category::all();
-        $items = Item::all();
-        
-       return view ('items.index' , compact('items','categories'));
-    }
-     
-
-    public function itemCategory(string $category_id){
-        $itemCategories = Item::where('category_id',$category_id)->get();
-        return view('items.item_category',compact('itemCategories'));
+        $categories =Category::paginate('10');
+        return view('admin.category.index' , compact('categories'));
     }
 
-    public function itemCart(){
-       
-        return view('items.item_carts');
-    }
     /**
      * Show the form for creating a new resource.
      */
@@ -50,10 +37,7 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        $item =Item::find($id);
-        $item_categoryID=$item->category_id;
-        $item_categories=Item::where('category_id',$item_categoryID)->orderBy('id','DESC')->limit(4)->get();
-       return view('items.detail' , compact('item','item_categories'));
+        //
     }
 
     /**

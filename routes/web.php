@@ -21,3 +21,16 @@ Route::get('carts', [App\Http\Controllers\ItemController::class, 'itemCart'])->n
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+//admin backend 
+Route::group(['prefix'=>'backend'],function(){
+    Route::get('/',[App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('items',App\Http\Controllers\Admin\ItemController::class);
+    Route::resource('category',App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('payments',App\Http\Controllers\Admin\PaymentController::class);
+    Route::resource('users',App\Http\Controllers\Admin\UsersController::class);
+
+});

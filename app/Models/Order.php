@@ -16,8 +16,8 @@ class Order extends Model
         'qty',
         'total',
         'paymentSlip',
-        'paymentID',
-        'itemID',
-        'userID',
+        'payment_id',
+        'item_id',
+        'user_id',
     ];
 }

@@ -9,6 +9,7 @@
                     <div class="col-md-6">
                         <!-- <div class="small mb-1">SKU: BST-498</div> -->
                         <h1 class="display-5 fw-bolder">{{$item->name}}</h1>
+                        <h5> <a href="{{route('item_category',$item->category_id)}}">Category:: {{$item->category->name}}</a></h5>
                         <div class="fs-5 mb-5">
                         @if($item->discount >0)
                                      <span class="text-mute text-decoration-line-through">{{$item->price}}</span>
